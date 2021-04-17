@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from django.conf import settings
 from micro import views
 
 urlpatterns = [
@@ -25,4 +26,10 @@ urlpatterns = [
     path('signupuser/', views.signupuser, name='signupuser'),
     path('loginuser/', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
+
+
+    # uav all urls
+    path('uavs/', include('uav.urls'), name='uavs'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

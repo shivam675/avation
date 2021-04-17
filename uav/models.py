@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 class UavPost(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField(upload_to='media/',  blank=True)
+    image = models.ImageField(upload_to='images/',  blank=True)
     date = models.DateField()
     type = [
     ('BLDC','Electric motor'),
@@ -20,7 +20,7 @@ class UavPost(models.Model):
 
 class UavImages(models.Model):
     post = models.ForeignKey(UavPost , default=None, on_delete=models.CASCADE)
-    images = models.FileField(upload_to = 'media/')
+    images = models.FileField(upload_to = 'images/')
     def __str__(self):
         return self.post.title
 
