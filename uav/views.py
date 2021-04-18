@@ -21,4 +21,4 @@ def detail(request, post_id):
         uav = get_object_or_404(UavPost, pk=post_id)
         photos = UavImages.objects.filter(post=post_id)
         comment = Comment.objects.filter(post=post_id)
-        return render(request, 'uav/detail.html',{'uavs':uav, 'photos':photos, 'comments':comment ,'comment_form':cf})
+        return render(request, 'uav/detail.html',{'uav':uav, 'photos':photos, 'comments':comment ,'comment_form':cf})

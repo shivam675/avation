@@ -15,12 +15,14 @@ class UavPost(models.Model):
     _unit_ = [('MHz','Mega Hertz'),
     ('GHz','Giga Hertz')]
     unit = models.CharField(max_length=3, choices=_unit_, default='GHz')
+    user_name = models.ForeignKey(User, default=None, on_delete = models.CASCADE)
     def __str__(self):
         return self.title
 
 class UavImages(models.Model):
     post = models.ForeignKey(UavPost , default=None, on_delete=models.CASCADE)
     images = models.FileField(upload_to = 'images/')
+    image_info = models.CharField(max_length=300, default=None)
     def __str__(self):
         return self.post.title
 
@@ -29,3 +31,4 @@ class Comment(models.Model):
     user = models.ForeignKey(User, default=None, on_delete = models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    commenter_email = models.EmailField(max_length = 254, default = None)
