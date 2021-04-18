@@ -1,0 +1,47 @@
+{% extends 'micro/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="wrapper">
+  <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header-image" data-parallax="true" style="background-image:url('{% static 'assets/img/header.jpg' %}');">
+    </div>
+    <div class="container">
+      <div class="content-center brand">
+        <div class="main bg-transparent">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="section section-basic bg-transparent" id="basic-elements">
+            <div class="container">
+              <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+              <form class="form-control text-warning"  method="POST">
+                {% csrf_token %}
+                <br>
+
+                <br>
+                <br>
+                <br>
+              <b>  <b>{{ pro_form.as_p }}</b></b>
+              <br>
+              <br>
+              <button type="submit" class="btn btn-primary">Save</button>
+              <br> 
+
+              </form>
+              </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- <h6 class="category category-absolute"> contact for more info. </h6> -->
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
-from .models import UavPost, UavImages, Comment
+from .models import UavPost, UavImages, Comment, UavVideo
+from micro.models import UserProfile
 from .forms import CommentForm
 
 def all_uavs(request):
@@ -21,4 +22,5 @@ def detail(request, post_id):
         uav = get_object_or_404(UavPost, pk=post_id)
         photos = UavImages.objects.filter(post=post_id)
         comment = Comment.objects.filter(post=post_id)
-        return render(request, 'uav/detail.html',{'uav':uav, 'photos':photos, 'comments':comment ,'comment_form':cf})
+        videos = UavVideo.objects.filter(post=post_id)
+        return render(request, 'uav/detail.html',{'uav':uav, 'photos':photos, 'videos':videos, 'comments':comment ,'comment_form':cf})

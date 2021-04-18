@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from micro.models import UserProfile
 
 class UavPost(models.Model):
     title = models.CharField(max_length=200)
@@ -26,9 +27,26 @@ class UavImages(models.Model):
     def __str__(self):
         return self.post.title
 
+
+class UavVideo(models.Model):
+    post = models.ForeignKey(UavPost , default=None, on_delete=models.CASCADE)
+    videofile= models.FileField(upload_to='vedios', null=True,)
+    video_info= models.CharField(max_length=500)
+    timestamp   = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.post.title + ": " + str(self.id)
+
+
+
+
 class Comment(models.Model):
     post = models.ForeignKey(UavPost, default=None, on_delete = models.CASCADE, related_name ='comments')
     user = models.ForeignKey(User, default=None, on_delete = models.CASCADE)
+
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    commenter_email = models.EmailField(max_length = 254, default = None)
+    # commenter_email = models.EmailField(max_length = 254, default = None)
+    def __str__(self):
+        full_string = str(self.post.user_name) + ' commented : ' + self.content
+        return  full_string

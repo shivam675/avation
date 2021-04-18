@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import UavPost, UavImages, Comment
+from .models import UavPost, UavImages, Comment, UavVideo
 
 class PostUavImageAdmin(admin.StackedInline):
     model = UavImages
@@ -9,11 +9,13 @@ class PostUavImageAdmin(admin.StackedInline):
 class PostUavCommentAdmin(admin.StackedInline):
     model = Comment
 
+class PostUavVideoAdmin(admin.StackedInline):
+    model = UavVideo
 
 @admin.register(UavPost)
 class PostUavAdmin(admin.ModelAdmin):
-    inlines = [PostUavImageAdmin]
-
+    inlines = [PostUavImageAdmin,
+    PostUavVideoAdmin]
     class Meta:
         model = UavPost
 

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .models import *
+from .forms import ProfileForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -12,6 +13,10 @@ from django.contrib.auth.decorators import login_required
 def base(request):
     return render(request, 'micro/base.html')
 
+
+def aboutus(request):
+    return render(request, 'micro/aboutus.html')
+    
 
 
 def home(request):
@@ -27,11 +32,31 @@ def signupuser(request):
                 user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('home')
+                return redirect('setprofile')
             except IntegrityError:
                 return render(request, 'micro/signupuser.html', {'form':UserCreationForm(), 'error':'That username has already been taken. Please choose a new username'})
         else:
             return render(request, 'micro/signupuser.html', {'form':UserCreationForm(), 'error':'Passwords did not match'})
+
+
+def set_user_profile(request):
+    if request.method == 'GET':
+        return render(request, 'micro/set_user_profile.html', {'pro_form':ProfileForm()})
+    else:
+        try:
+            form = ProfileForm(request.POST)
+            new_profile = form.save(commit=False)
+            new_profile.user = request.user
+            new_profile.name = request.user
+            new_profile.save()
+            return redirect('home')
+        except ValueError:
+            return render(request, 'micro/set_user_profile.html', {'pro_form':ProfileForm(), 'error':'Bad data passed in. Try again.'})
+
+
+
+
+
 
 def loginuser(request):
     if request.method == 'GET':
