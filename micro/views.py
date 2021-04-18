@@ -16,7 +16,7 @@ def base(request):
 
 def aboutus(request):
     return render(request, 'micro/aboutus.html')
-    
+
 
 
 def home(request):
@@ -38,7 +38,7 @@ def signupuser(request):
         else:
             return render(request, 'micro/signupuser.html', {'form':UserCreationForm(), 'error':'Passwords did not match'})
 
-
+@login_required
 def set_user_profile(request):
     if request.method == 'GET':
         return render(request, 'micro/set_user_profile.html', {'pro_form':ProfileForm()})
