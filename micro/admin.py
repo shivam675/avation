@@ -3,4 +3,9 @@ from .models import Contact
 # Register your models here.
 
 
-admin.site.register(Contact)
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'number')
+    fieldsets = ((None,{'fields': ('first_name','last_name','number','message')}),)
+    search_fields = ('first_name',)
+admin.site.register(Contact, ContactAdmin)

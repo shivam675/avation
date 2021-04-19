@@ -5,12 +5,16 @@ from .models import UavPost, UavImages, Comment, UavVideo
 
 class PostUavImageAdmin(admin.StackedInline):
     model = UavImages
+    extra = 1
 
 class PostUavCommentAdmin(admin.StackedInline):
     model = Comment
+    extra = 1
 
 class PostUavVideoAdmin(admin.StackedInline):
     model = UavVideo
+    extra = 1
+
 
 @admin.register(UavPost)
 class PostUavAdmin(admin.ModelAdmin):
