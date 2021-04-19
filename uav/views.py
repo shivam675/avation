@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from .models import UavPost, UavImages, Comment, UavVideo
-from micro.models import UserProfile
+# from micro.models import UserProfile
 from .forms import CommentForm
 
 def all_uavs(request):

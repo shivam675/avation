@@ -4,10 +4,14 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .models import *
-from .forms import ProfileForm
+from .forms import ContactForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from projects.models import Project, Division, Tag
+from .models import Contact
+
+
+
 # Create your views here.
 
 # base teemplate rendering
@@ -78,3 +82,27 @@ def logoutuser(request):
     if request.method == 'GET':
         logout(request)
         return redirect('home')
+
+
+
+
+def ContactCreate(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST or None)
+        if form.is_valid():
+            first_name = request.POST.get('first_name')
+            last_name = request.POST.get('last_name')
+            number = request.POST.get('number')
+            message = request.POST.get('message')
+            obj = Contact.objects.create(first_name=first_name, last_name=last_name, number=number, message=message)
+            obj.save()
+            return redirect('thanks')
+        else:
+            form = ContactForm()
+            return render(request, 'micro/contact_form.html',{ 'error': 'Something went wrong. Please try again !' ,'comment_form':form})
+    else:
+        form = ContactForm()
+        return render(request, 'micro/contact_form.html',{'comment_form':form})
+
+def thanks(request):
+    return render(request, 'micro/thanks.html')

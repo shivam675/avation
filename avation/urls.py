@@ -28,6 +28,8 @@ urlpatterns = [
     path('logout/', views.logoutuser, name='logoutuser'),
     path('setprofile/', views.set_user_profile, name = 'setprofile'),
     path('aboutus', views.aboutus, name = 'aboutus' ),
+    path("contact/", views.ContactCreate, name="contact"),
+    path("thanks/", views.thanks, name="thanks"),
 
 
     # uav all urls

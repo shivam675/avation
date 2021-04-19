@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from micro.models import UserProfile
+# from micro.models import UserProfile
 
 class UavPost(models.Model):
     title = models.CharField(max_length=200)

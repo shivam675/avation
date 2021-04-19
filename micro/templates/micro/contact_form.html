@@ -1,0 +1,50 @@
+{% extends 'micro/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- <div class="container"> -->
+  <div class="section section-pagination">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="progress-container">
+                  <!-- <div class="progress"> -->
+
+                  <h4>Contact Form<b> </h4>
+                    {% if error %}
+                    <h5 class="text-danger">{{ error }}</h5>
+                    {% endif %}
+                    <div id="inputs">
+                      <!-- <p class="category">fillup</p> -->
+                      <form class="from-control" method="POST"">
+                          {% csrf_token %}
+                            <div class="form-control text-default">
+                                {% csrf_token %}
+                                {{ comment_form.as_p }}
+                                </div>
+                                <input type="submit" name="comment" class="btn btn-warning">
+                              </form>
+                    </div>
+
+                  <!-- </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+{% endblock %}
