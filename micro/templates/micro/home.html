@@ -96,74 +96,114 @@
 </div>
 
 
+
+
+
 <div class="section section-javascript" id="javascriptComponents">
   <div class="container">
-    <h2 class="title">WHAT DO WE DO</h2>
+    <h3 class="title">WHAT DO WE DO</h3>
     <div class="row" id="modals">
       <div class="col-md-6">
-        <h4>Commercial</h4>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-          Launch Modal
+        <h4>Tags</h4>
+        {% for tag in tags %}
+        <!-- <button class="btn btn-" data-toggle="modal" data-target="#myModal">
+        </button> -->
+        <button class="btn btn-{{ tag.colour }}" data-toggle="modal" data-target="#myModal{{ tag.id }}">
+          {{ tag.name }}
         </button>
-        <button class="btn btn-warning" data-toggle="modal" data-target="#myModal1">
-          Launch Modal Mini
-        </button>
-      </div>
-      <div class="col-md-6">
-        <h4>TRANING</h4>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover On Left" data-toggle="popover" data-placement="left" data-content="Here will be some very useful information about his popover." data-color="primary">
-          On left
-        </button>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Here will be some very useful information about his popover.">
-          On top
-        </button>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Right" data-toggle="popover" data-placement="right" data-content="Here will be some very useful information about his popover.<br> Here will be some very useful information about his popover.">
-          On right
-        </button>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Bottom" data-toggle="popover" data-placement="bottom" data-content="Here will be some very useful information about his popover.">
-          On bottom
-        </button>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover On Left" data-toggle="popover" data-placement="left" data-content="Here will be some very useful information about his popover." data-color="primary">
-          On left
-        </button>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Here will be some very useful information about his popover.">
-          On top
-        </button>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Right" data-toggle="popover" data-placement="right" data-content="Here will be some very useful information about his popover.<br> Here will be some very useful information about his popover.">
-          On right
-        </button>
-        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Bottom" data-toggle="popover" data-placement="bottom" data-content="Here will be some very useful information about his popover.">
-          On bottom
-        </button>
-      </div>
-      <br />
-      <br />
-      <div class="col-md-6">
-        <h4>Datepicker</h4>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="datepicker-container">
-              <div class="form-group">
-                <input type="text" class="form-control date-picker" value="10/05/2016" data-datepicker-color="primary">
+        <div class="modal fade modal modal-warning" id="myModal{{ tag.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header justify-content-center">
+                <div class="modal-profile">
+                <h6>{{ tag.division }}</h6>
+                </div>
+              </div>
+              <div class="modal-body">
+                  <h6 class="text-danger"> {{ tag.name }} </h6>
+
+
+                <p><b> {{ tag.body }}</b></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-link btn-neutral">Back</button>
+                <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
         </div>
+        {% endfor %}
       </div>
-      <div class="col-md-6">
-        <h4>Tooltips</h4>
-        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="left" title="Tooltip on left" data-container="body" data-animation="true" data-delay="100">On left</button>
-        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="top" title="Tooltip on top" data-container="body" data-animation="true">On top</button>
-        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" data-container="body" data-animation="true">On bottom</button>
-        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="right" title="Tooltip on right" data-container="body" data-animation="true">On right</button>
-        <div class="clearfix"></div>
-        <br>
-        <br>
+      <br />
+      <br />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<div class="section">
+  <div class="container text-center">
+    <div class="row justify-content-md-center">
+      <div class="col-md-12 col-lg-8">
+        <h2 class="title">Aviation in Breif</h2>
+        <h5 class="description"><b>The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful Bootstrap 4 ui kit.</b></h5>
       </div>
     </div>
   </div>
 </div>
 
 
+
+<br>
+<br>
+<div class="section section-download" id="#download-section" data-background-color="black">
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="text-center col-md-12 col-lg-8">
+              <h3 class="title">Do you love this Bootstrap 4 UI Kit?</h3>
+              <h5 class="description">Cause if you do, it can be yours for FREE. Hit the button below to navigate to Creative Tim or Invision where you can find the kit in HTML or Sketch/PSD format. Start a new project or give an old Bootstrap project a new look!</h5>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row justify-content-md-center sharing-area text-center">
+            <div class="text-center col-md-12 col-lg-8">
+              <h3>Thank you for supporting us!</h3>
+            </div>
+            <div class="text-center col-md-12 col-lg-8">
+              <a target="_blank" href="https://www.twitter.com/creativetim" class="btn btn-neutral btn-icon btn-twitter btn-round btn-lg" rel="tooltip" title="Follow us">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a target="_blank" href="https://www.facebook.com/creativetim" class="btn btn-neutral btn-icon btn-facebook btn-round btn-lg" rel="tooltip" title="Like us">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a target="_blank" href="https://www.linkedin.com/company-beta/9430489/" class="btn btn-neutral btn-icon btn-linkedin btn-lg btn-round" rel="tooltip" title="Follow us">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a target="_blank" href="https://github.com/creativetimofficial/now-ui-kit" class="btn btn-neutral btn-icon btn-github btn-round btn-lg" rel="tooltip" title="Star on Github">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
 
 {% endblock %}

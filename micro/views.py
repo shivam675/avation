@@ -7,7 +7,7 @@ from .models import *
 from .forms import ProfileForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from projects.models import Project
+from projects.models import Project, Division, Tag
 # Create your views here.
 
 # base teemplate rendering
@@ -22,7 +22,10 @@ def aboutus(request):
 
 def home(request):
     projects = Project.objects.all()
-    return render(request, 'micro/home.html', {'projects':projects})
+    # get_object_or_404()
+    divs = Division.objects.all()
+    tags = Tag.objects.filter()
+    return render(request, 'micro/home.html', {'projects':projects, 'divs':divs, 'tags':tags})
 
 def signupuser(request):
     if request.method == 'GET':
