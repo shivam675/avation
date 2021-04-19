@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'uav',
     'fixedwing',
     'multirotors',
+    'projects',
 ]
 
 MIDDLEWARE = [

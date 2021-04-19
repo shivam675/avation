@@ -31,110 +31,139 @@
 
   <div class="section section-basic" id="basic-elements">
     <div class="container">
-      <h1>Ongoing Projects </h1>
+      <!-- <section id="loaders">
+          <i class="now-ui-icons loader_refresh spin"></i>
+    </section> -->
+      <h1 class="text-warning">
+        <i class="now-ui-icons ui-2_settings-90"></i> ------
+        <i class="now-ui-icons ui-1_send"></i> ------
+        <i class="now-ui-icons design_vector"></i> ------
+        <i class="now-ui-icons ui-1_send"></i> ------
+        <i class="now-ui-icons objects_spaceship"></i> ------
+        <i class="now-ui-icons shopping_cart-simple"></i> -----
+      </h1>
+
+
+
+
+
+
+
+          <h5 class="description"><b>-------------------------------------------------------------------------------</b><h5>
+
+      <h1 >  ONGOING PROJECTS </h1>
+      <!-- <h5 class="description"><b>-------------------------------------------------------------------------------</b><h5> -->
       </div>
     </div>
   </div>
 
   <!-- <h2> Jus Chillin</h2> -->
 
-<div class="section section-examples" data-background-color="black">
-  <div class="space-50"></div>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <!-- <a href="examples/landing-page.html" target="_blank"> -->
-          <!-- <img src="assets/img/landing.jpg" alt="Image" class="img-raised"> -->
-
-          <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-12">
-              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                  <div class="carousel-item active">
-                    <img class="d-block" src="{% static 'assets/img/bg1.jpg' %}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Nature, United States</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="{% static 'assets/img/bg3.jpg' %}" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Somewhere Beyond, United States</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="{% static 'assets/img/bg4.jpg' %}" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Yellowstone National Park, United States</h5>
-                    </div>
+  <div class="section section-team text-center" data-background-color="black">
+    <h2 class="title">Awesome</h2>
+    <div class="container">
+      <h2 class="description">_________________________________________</h2>
+      <div class="team">
+        <div class="row">
+          {% for project in projects %}
+          <div class="space-50"></div>
+          <div class="col-md-4">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <a href="{{ project.url }}">
+                  <img class="d-block" src="{{ project.image.url }}" alt="First slide">
+                  </a>
+                  <div class="carousel-caption d-none d-md-block">
+                    <!-- <a href="{{ project.url }}"> -->
+                    <h5>{{ project.title }}</h5>
+                    <!-- </a> -->
                   </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <i class="now-ui-icons arrows-1_minimal-left"></i>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <i class="now-ui-icons arrows-1_minimal-right"></i>
-                </a>
               </div>
+              <br>
+              <h5 class="description">{{ project.description }}</h5>
+              <br>
+              <br>
+              <br>
             </div>
           </div>
-
-        <!-- </a > -->
-        <a href="examples/landing-page.html" class="btn btn-outline-default btn-primary btn-round">View Landing Page</a>
-      </div>
-      <div class="col">
-        <!-- <a href="examples/profile-page.html" target="_blank"> -->
-          <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-12">
-              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                  <div class="carousel-item active">
-                    <img class="d-block" src="{% static 'assets/img/bg1.jpg' %}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Nature, United States</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="{% static 'assets/img/bg3.jpg' %}" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Somewhere Beyond, United States</h5>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="d-block" src="{% static 'assets/img/bg4.jpg' %}" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Yellowstone National Park, United States</h5>
-                    </div>
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <i class="now-ui-icons arrows-1_minimal-left"></i>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <i class="now-ui-icons arrows-1_minimal-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-        <!-- </a> -->
-        <a href="examples/profile-page.html" class="btn btn-outline-default btn-primary btn-round">View Profile Page</a>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="section section-javascript" id="javascriptComponents">
+  <div class="container">
+    <h2 class="title">WHAT DO WE DO</h2>
+    <div class="row" id="modals">
+      <div class="col-md-6">
+        <h4>Commercial</h4>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          Launch Modal
+        </button>
+        <button class="btn btn-warning" data-toggle="modal" data-target="#myModal1">
+          Launch Modal Mini
+        </button>
+      </div>
+      <div class="col-md-6">
+        <h4>TRANING</h4>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover On Left" data-toggle="popover" data-placement="left" data-content="Here will be some very useful information about his popover." data-color="primary">
+          On left
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Here will be some very useful information about his popover.">
+          On top
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Right" data-toggle="popover" data-placement="right" data-content="Here will be some very useful information about his popover.<br> Here will be some very useful information about his popover.">
+          On right
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Bottom" data-toggle="popover" data-placement="bottom" data-content="Here will be some very useful information about his popover.">
+          On bottom
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover On Left" data-toggle="popover" data-placement="left" data-content="Here will be some very useful information about his popover." data-color="primary">
+          On left
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Here will be some very useful information about his popover.">
+          On top
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Right" data-toggle="popover" data-placement="right" data-content="Here will be some very useful information about his popover.<br> Here will be some very useful information about his popover.">
+          On right
+        </button>
+        <button type="button" class="btn btn-default" data-container="body" data-original-title="Popover on Bottom" data-toggle="popover" data-placement="bottom" data-content="Here will be some very useful information about his popover.">
+          On bottom
+        </button>
+      </div>
+      <br />
+      <br />
+      <div class="col-md-6">
+        <h4>Datepicker</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="datepicker-container">
+              <div class="form-group">
+                <input type="text" class="form-control date-picker" value="10/05/2016" data-datepicker-color="primary">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>Tooltips</h4>
+        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="left" title="Tooltip on left" data-container="body" data-animation="true" data-delay="100">On left</button>
+        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="top" title="Tooltip on top" data-container="body" data-animation="true">On top</button>
+        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" data-container="body" data-animation="true">On bottom</button>
+        <button type="button" class="btn btn-default btn-tooltip" data-toggle="tooltip" data-placement="right" title="Tooltip on right" data-container="body" data-animation="true">On right</button>
+        <div class="clearfix"></div>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 {% endblock %}
