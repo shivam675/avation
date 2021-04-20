@@ -43,28 +43,28 @@ from .models import Contact
 class ContactForm(forms.ModelForm):
     first_name = forms.CharField(label ="  ", widget = forms.Textarea(
     attrs ={
-        'class':'form-control',
+        'class':'form-control title',
         'placeholder':'First Name',
         'rows':1,
         'cols':1
     }))
     last_name = forms.CharField(label ="  ", widget = forms.Textarea(
     attrs ={
-        'class':'form-control',
+        'class':'form-control title',
         'placeholder':'Last Name',
         'rows':1,
         'cols':1
     }))
     number = forms.CharField(label ="  ", widget = forms.Textarea(
     attrs ={
-        'class':'form-control',
+        'class':'form-control title',
         'placeholder':'Phone Number 10 digits only',
         'rows':1,
         'cols':1
     }))
     message = forms.CharField(label ="  ", widget = forms.Textarea(
     attrs ={
-        'class':'form-control',
+        'class':'form-control title',
         'placeholder':'Message',
         'rows':4,
         'cols':1

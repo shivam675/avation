@@ -5,11 +5,11 @@
 {% block content %}
 
 <div class="page-header clear-filter" filter-color="orange">
-  <div class="page-header-image" style="background-image:url({% static 'assets/img/login.jpg' %})"></div>
+  <div class="page-header-image" style="background-image:url({% static 'assets/img/bg3.jpg' %})"></div>
   <div class="content">
     <div class="container">
       <div class="col-md-4 ml-auto mr-auto">
-        <div class="card card-login card-plain">
+        <div class="card card-login card-plain ">
           <form class="form" method="POST" >
             {% csrf_token %}
             <div class="card-header text-center">
@@ -29,7 +29,7 @@
                     <i class="now-ui-icons users_circle-08"></i>
                   </span>
                 </div>
-                <input type="text" name="username" class="form-control" id="username" placeholder="User Name...">
+                <input type="text" name="username" class="form-control title" id="username" placeholder="User Name...">
               </div>
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
@@ -37,7 +37,7 @@
                     <i class="now-ui-icons ui-1_lock-circle-open"></i>
                   </span>
                 </div>
-                <input type="password" name="password1" placeholder="password" class="form-control" id="password1"/>
+                <input type="password" name="password1" placeholder="password" class="form-control title" id="password1"/>
               </div>
               <div class="input-group no-border input-lg">
                 <div class="input-group-prepend">
@@ -45,7 +45,7 @@
                     <i class="now-ui-icons ui-1_lock-circle-open"></i>
                   </span>
                 </div>
-                <input type="password" name="password2" placeholder="Confirm password" class="form-control" id="password2"/>
+                <input type="password" name="password2" placeholder="Confirm password" class="form-control title" id="password2"/>
               </div>
 
             </div>
