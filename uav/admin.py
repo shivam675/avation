@@ -46,7 +46,7 @@ admin.site.register(UavPost, PostUavAdmin)
 # @admin.register(Comment)
 class PostUavCommentAdmin(admin.ModelAdmin):
     list_display = ('user', 'post','created_at' ,'content')
-    fieldsets = ((None,{'fields': ('post','user','content','created_at')}),)
+    fieldsets = ((None,{'fields': ('post','user','content',)}),)
     search_fields = ('user', 'post', 'content')
 
 admin.site.register(Comment, PostUavCommentAdmin)
