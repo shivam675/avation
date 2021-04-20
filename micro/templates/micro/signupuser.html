@@ -5,8 +5,8 @@
 {% block content %}
 
 <div class="page-header clear-filter" filter-color="orange">
-  <div class="page-header-image" style="background-image:url({% static 'assets/img/bg3.jpg' %})"></div>
-  <div class="content">
+  <div class="page-header-image" style="background-image:url()"></div>  {# {% static 'assets/img/bg3.jpg' %} #}
+  <!-- <div class="content"> -->
     <div class="container">
       <div class="col-md-4 ml-auto mr-auto">
         <div class="card card-login card-plain ">
@@ -14,7 +14,7 @@
             {% csrf_token %}
             <div class="card-header text-center">
               <div class="logo-container">
-                <img src="{% static 'assets/img/now-logo.png' %}" alt="">
+                <img src="{% static 'assets/img/logo_m.png' %}" alt="">
               </div>
             </div>
             {% if error %}
@@ -65,10 +65,12 @@
                 </h6>
               </div>
           </form>
+
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+  <!-- </div> -->
 
 {% endblock %}
