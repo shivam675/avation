@@ -34,6 +34,9 @@ urlpatterns = [
 
     # uav all urls
     path('uavs/', include('uav.urls'), name='uavs'),
+
+    # all FixedWing
+    path('fixedwing/', include('fixedwing.urls'), name='fixedwing')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

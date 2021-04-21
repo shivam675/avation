@@ -121,7 +121,7 @@ USE_TZ = True
 
 #  Auth of custom profiles
 
-AUTH_PROFILE_MODULE = 'micro.UserProfile'
+# AUTH_PROFILE_MODULE = 'micro.UserProfile'
 
 
 # Static files (CSS, JavaScript, Images)
