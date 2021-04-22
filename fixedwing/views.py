@@ -6,7 +6,7 @@ from .forms import CommentFormFixedwing
 
 def all_fixedwing(request):
     fix_post = FixedWingPost.objects.order_by('-date')
-    return render(request, 'fixedwing/all_fixedwing.html', {'fixs':fix_post})
+    return render(request, 'fixedwing/all_fixedwing.html', {'fixedwings':fix_post})
 
 def detail(request, post_id):
     if request.method == 'POST':

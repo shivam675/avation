@@ -9,11 +9,11 @@
     </div>
     <div class="container">
       <div class="content-center brand">
-        <img class="n-logo" src="{% static 'assets/img/now-logo.png' %}" alt="">
-        <h1 class="h1-seo">FIXED WING PROJECTS</h1>
+        <img class="" src="{% static 'assets/img/logo_m_small.png' %}" alt="">
+        <h1 class="h1-seo">FIXEDWING PLANES</h1>
         <h3></h3>
       </div>
-      <h6 class="category category-absolute"> Unmaned Areal Vehicle. </h6>
+      <h6 class="category category-absolute"> contact for more info. </h6>
     </div>
   </div>
   </div>
@@ -31,7 +31,7 @@
 </div>
 
 
-{% for fix in fixs %}
+{% for i in fixedwings %}
 <div class="section section-examples" data-background-color="black">
 
   <div class="space-30"></div>
@@ -39,32 +39,32 @@
     <div class="row">
       <div class="col">
         <a href="#">
-          <img src="{{ fix.image.url }}" alt="Image" class="img-raised">
+          <img src="{{ i.image.url }}" alt="Image" class="img-raised">
         </a>
-        <a href="{% url 'fixedwing:detail' fix.id %}" class="btn btn-outline-default btn-primary btn-round">Detail Page</a>
+        <a href="{% url 'fixedwing:detail' i.id %}" class="btn btn-outline-default btn-primary btn-round">Detail Page</a>
       </div>
       <!-- <div class="col"> -->
 
 
 
         <div class="col-md-10 ml-auto col-xl-6 mr-auto ">
-
+              <!-- <p class="category">{{ i.title }}</p> -->
               <!-- Nav tabs -->
               <div class="card">
                 <div class="card-header">
                   <ul class="nav nav-tabs justify-content-center" role="tablist" data-background-color="orange">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#home{{ fix.id }}" role="tab">
+                      <a class="nav-link active" data-toggle="tab" href="#home{{ i.id }}" role="tab">
                         <i class="now-ui-icons objects_umbrella-13"></i> Brief Info
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#profile{{ fix.id }}" role="tab">
+                      <a class="nav-link" data-toggle="tab" href="#profile{{ i.id }}" role="tab">
                         <i class="now-ui-icons shopping_cart-simple"></i> Tech Info
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#messages{{ fix.id }}" role="tab">
+                      <a class="nav-link" data-toggle="tab" href="#messages{{ i.id }}" role="tab">
                         <i class="now-ui-icons shopping_shop"></i> Description
                       </a>
                     </li>
@@ -78,18 +78,17 @@
                 <div class="card-body" data-background-color="orange">
                   <!-- Tab panes -->
                   <div class="tab-content text-center" >
-                    <div class="tab-pane active" id="home{{ fix.id }}" role="tabpanel" >
-                      <p ><b> Title </b> : {{ fix.title }} <br>
-                          <b>    Date :  </b>{{ fix.date }} </p>
+                    <div class="tab-pane active" id="home{{ i.id }}" role="tabpanel" >
+                      <p ><b> Title </b> : {{ i.title }} <br>
+                          <b>    Date :  </b>{{ i.date }} </p>
                     </div>
-                    <div class="tab-pane" id="profile{{ fix.id }}" role="tabpanel">
-                      <p> Rotor Type : {{ fix.Rotor_type }}<br>
-                          RF frequency : {{ fix.RF_frequecy }} {{ fix.unit }}<b>
-                          Wing Span : {{ fix.wing_Span_in_mm }} mm<br>
+                    <div class="tab-pane" id="profile{{ i.id }}" role="tabpanel">
+                      <p> Rotor Type : {{ i.Rotor_type }}<br>
+                          RF frequency : {{ i.RF_frequecy }} {{ i.unit }}
                       </p>
                     </div>
-                    <div class="tab-pane" id="messages{{ fix.id }}" role="tabpanel">
-                      <p>{{ fix.description|truncatechars:500 }} </p>
+                    <div class="tab-pane" id="messages{{ i.id }}" role="tabpanel">
+                      <p>{{ i.description|truncatechars:500 }} </p>
                     </div>
                     <!-- <div class="tab-pane" id="settings" role="tabpanel">
                       <p>
