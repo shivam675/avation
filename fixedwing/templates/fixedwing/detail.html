@@ -4,6 +4,9 @@
 {% block content %}
 
 <br>
+
+<div class="section section-signup" style="background-image: url({% static 'assets/img/bg11.jpg' %}); background-size: cover; background-position: top center; min-height: 700px;">
+<div class="container">
 <div class="main">
 <br>
   <div class="section section-basic" id="basic-elements">
@@ -12,7 +15,6 @@
       </div>
     </div>
   </div>
-
 
 <div class="section" id="carousel">
        <div class="container">
@@ -73,7 +75,8 @@
          </div>
        </div>
      </div>
-
+   </div>
+</div>
 <div class="section">
         <div class="container">
           <h3 class="title">STORY</h3>
@@ -89,7 +92,11 @@
                     <br>
                     <small>
                       - <b>{{ user.get_username|capfirst }}</b>
+
+
                     </small>
+                    <h4>Labels</h4>
+
                   </p>
                 </blockquote>
                 </div>
@@ -98,7 +105,13 @@
           </div>
 
 
-
+          <span class="badge badge-default">Default</span>
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge badge-success">Success</span><br>
+          <span class="badge badge-info">Info</span>
+          <span class="badge badge-warning">Warning</span>
+          <span class="badge badge-danger">Danger</span><br>
+          <span class="badge badge-neutral">Neutral</span>
 
 
           <!-- Commrnt form -->
