@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'projects',
     'micro',
     'uav',
+    # ongoing
     'fixedwing',
+    # yet to start
     'multirotors',
-    'projects',
 ]
 
 MIDDLEWARE = [

@@ -8,7 +8,7 @@
 <br>
   <div class="section section-basic" id="basic-elements">
     <div class="container">
-      <h1>{{ uav.title }}</h1>
+      <h1>{{ fix.title }}</h1>
       </div>
     </div>
   </div>
@@ -29,9 +29,9 @@
                </ol>
                <div class="carousel-inner" role="listbox">
                  <div class="carousel-item active">
-                   <img class="d-block" src="{{ uav.image.url }}" alt="First slide">
+                   <img class="d-block" src="{{ fix.image.url }}" alt="First slide">
                    <div class="carousel-caption d-none d-md-block">
-                     <h5>{{ uav.title }}</h5>
+                     <h5>{{ fix.title }}</h5>
                    </div>
                  </div>
                  {% for p in photos %}
@@ -84,11 +84,11 @@
                 <!-- <span>Quote</span> -->
                 <blockquote>
                   <p class="blockquote blockquote-info">
-                    <b>{{ uav.description }}</b>
+                    <b>{{ fix.description }}</b>
                     <br>
                     <br>
                     <small>
-                      - <b>{{ uav.user_name|capfirst }}</b>
+                      - <b>{{ user.get_username|capfirst }}</b>
                     </small>
                   </p>
                 </blockquote>
@@ -106,7 +106,7 @@
 
         {% if user.is_authenticated %}
           <div id="inputs">
-            <h4>You are commenting as <b> {{ uav.user_name }}<b> </h4>
+            <h4>You are commenting as <b> {{ fix.user_name }}<b> </h4>
             <!-- <p class="category">fillup</p> -->
             <form class="from-control" method="POST">
                 {% csrf_token %}

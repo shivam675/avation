@@ -5,8 +5,8 @@ from .models import FixedWingPost, FixedWingImages, FixedWingVideo, FixedWingCom
 from .forms import CommentFormFixedwing
 
 def all_fixedwing(request):
-    fixs = FixedWingPost.objects.order_by('-date')
-    return render(request, 'fixedwing/all_fixedwing.html', {'fixs':fixs})
+    fix_post = FixedWingPost.objects.order_by('-date')
+    return render(request, 'fixedwing/all_fixedwing.html', {'fixs':fix_post})
 
 def detail(request, post_id):
     if request.method == 'POST':
