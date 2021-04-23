@@ -5,13 +5,14 @@
 
 <br>
 
-<div class="section section-signup" style="background-image: url({% static 'assets/img/bg11.jpg' %}); background-size: cover; background-position: top center; min-height: 700px;">
-<div class="container">
+<!-- <div class="section section-signup" style="background-image: url({% static 'assets/img/bg11.jpg' %}); background-size: cover; background-position: top center; min-height: 700px;">
+<div class="container"> -->
 <div class="main">
 <br>
   <div class="section section-basic" id="basic-elements">
     <div class="container">
       <h1>{{ fix.title }}</h1>
+      <h4> Dated : {{ fix.date }} </h4>
       </div>
     </div>
   </div>
@@ -75,8 +76,8 @@
          </div>
        </div>
      </div>
-   </div>
-</div>
+   <!-- </div>
+</div> -->
 <div class="section">
         <div class="container">
           <h3 class="title">STORY</h3>
@@ -95,7 +96,6 @@
 
 
                     </small>
-                    <h4>Labels</h4>
 
                   </p>
                 </blockquote>
@@ -104,14 +104,33 @@
             </div>
           </div>
 
+          <h4>Tags</h4>
 
-          <span class="badge badge-default">Default</span>
-          <span class="badge badge-primary">Primary</span>
-          <span class="badge badge-success">Success</span><br>
-          <span class="badge badge-info">Info</span>
-          <span class="badge badge-warning">Warning</span>
-          <span class="badge badge-danger">Danger</span><br>
-          <span class="badge badge-neutral">Neutral</span>
+          <span class="badge badge-default">Wing Span {{ fix.wing_Span_in_mm }} mm</span>
+          <span class="badge badge-primary">Wing Area {{ fix.wing_Area_in_mm2 }} mm2</span>
+          <span class="badge badge-success">Average Chord {{ fix.average_Chord_in_mm }} mm</span><br>
+          <span class="badge badge-info">Weight In Grams {{ fix.weight_in_grams }}</span>
+          <span class="badge badge-warning">cruise_Speed_in_mtr_per_s {{ fix.cruise_Speed_in_mtr_per_s }}</span>
+          <span class="badge badge-danger">{{ fix.microcontroller }}</span><br>
+          <span class="badge badge-warning">{{ fix.inertial_Measurement_Unit }}</span>
+          <span class="badge badge-default">{{ fix.RC_Receiver }}</span>
+          <span class="badge badge-primary">{{ fix.RC_Transmitter }}</span>
+          <span class="badge badge-success">{{ fix.servos }}</span><br>
+          <span class="badge badge-info">{{ fix.electronic_Speed_Contorller }}</span>
+          <span class="badge badge-warning">{{ fix.brushless_Motor }}</span>
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+
 
 
           <!-- Commrnt form -->
