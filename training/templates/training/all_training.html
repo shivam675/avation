@@ -1,0 +1,30 @@
+{% extends 'micro/base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="container">
+<h1>TRAINING WE PROVIDE</h1>
+</div>
+<br>
+<div class="wrapper">
+    <div class="container">
+    {% for train in trainings %}
+        <div class="card" style="width: 18rem;">
+        <img src="{{ train.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{ train.kind }}</h5>
+        <p class="card-text">{{ train.card_description }}
+        
+        <a href="{% url 'training:detail' train.id %}" class="btn btn-info">Go somewhere</a>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+<br>
+<br>
+
+
+{% endblock %}

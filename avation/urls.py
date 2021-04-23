@@ -36,7 +36,11 @@ urlpatterns = [
     path('uavs/', include('uav.urls'), name='uavs'),
 
     # all FixedWing
-    path('fixedwing/', include('fixedwing.urls'), name='fixedwing')
+    path('fixedwing/', include('fixedwing.urls'), name='fixedwing'),
+
+    # All training
+    path('training/', include('training.urls'), name='training'),
 ]
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

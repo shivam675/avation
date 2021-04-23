@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'projects',
     'micro',
     'uav',
-    # ongoing
     'fixedwing',
+    # ongoing
+    'training',
     # yet to start
     'multirotors',
 ]
