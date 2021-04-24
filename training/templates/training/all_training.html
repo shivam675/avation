@@ -7,21 +7,34 @@
 <h1>TRAINING WE PROVIDE</h1>
 </div>
 <br>
-<div class="wrapper">
-    <div class="container">
+
+
+<div class="container">
+  <div class="row">
     {% for train in trainings %}
-        <div class="card" style="width: 18rem;">
-        <img src="{{ train.image.url }}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">{{ train.kind }}</h5>
-        <p class="card-text">{{ train.card_description }}
-        
-        <a href="{% url 'training:detail' train.id %}" class="btn btn-info">Go somewhere</a>
-        </div>
-        </div>
-    {% endfor %}
-    </div>
+              <div class="col-sm-4 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{ train.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ train.kind }}</h5>
+                      <p class="card-text">{{ train.card_description }}</p>
+                      <a role="button" href="{% url 'training:detail' train.id %}" class="btn btn-info">Go !!!</a>
+                    </div>
+                  </div>
+              </div>
+          {% endfor %}
+
+
+
+<br>
+<br>
+<br>
+
 </div>
+</div>
+
+
+
 
 <br>
 <br>
