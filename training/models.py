@@ -6,8 +6,15 @@ class Training(models.Model):
     card_description = models.CharField(max_length=300)
     image = models.ImageField(upload_to='images/',  blank=False)
     date = models.DateField()
+    brief_info = models.TextField()
     def __str__(self):
         return self.kind
+
+
+class LearnPoints(models.Model):
+    post = models.ForeignKey(Training , default=None, on_delete=models.CASCADE)
+    point = models.CharField(max_length=500, blank=False)
+
 
 class TrainingImages(models.Model):
     post = models.ForeignKey(Training , default=None, on_delete=models.CASCADE)

@@ -82,21 +82,74 @@
 
 
 
+
+
+
 <br>
 <br>
 <h4>{{ train.card_description }}</h4>
 <br>
 <br>
+</div>
+</div>
+
+<div class="container">
+<div class="section section-javascript" id="javascriptComponents">
+        <div class="container">
+          <h3 class="title">What Will You Learn</h3>
+          <div class="row" id="modals">
+            <div class="col-md-6">
+              <h4>{{ train.brief_info }}</h4>
+              
+            </div>
+            <div class="col-md-6">
+              <h4></h4>
+
+                  <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
+                      Skill List
+                    </button>
+                    {% for po in points %}
+                    <button type="button" class="list-group-item list-group-item-action">{{ po.point }}</button>
+                    {% endfor %}
+                  </div>
+
+            </div>
+            <br />
+            <br />
+            <div class="col-md-6">
+              <h4></h4>
+            </div>
+            <div class="col-md-6">
+
+
+              <div class="clearfix"></div>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+<br>
+<br>
+<br>
 <a class="btn btn-info" href="{% url 'contact' %}" role="button">Get In Touch</a>
+<br>
+<br>  
 </div>
-</div>
-
-
-
-<br>
-<br>
-<br>
-
-
-
 {% endblock %}
