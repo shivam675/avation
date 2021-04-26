@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'commercial',
     
     # yet to start
-    'multirotors',
+    # 'multirotors',
 ]
 
 MIDDLEWARE = [
