@@ -40,6 +40,13 @@ urlpatterns = [
 
     # All training
     path('training/', include('training.urls'), name='training'),
+
+    # All multirotor
+    path('multirotors/', include('multirotors.urls'), name='multirotors'),
+
+    # all commercial
+    path('commercial/', include('commercial.urls'), name='commercial'),
+
 ]
 
 
