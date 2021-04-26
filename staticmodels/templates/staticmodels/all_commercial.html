@@ -1,0 +1,46 @@
+{% extends 'micro/base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="container bg-warning">
+<p>
+<h1 class="text-center title" >Static Model Work</h1>
+<div class="space-50"></div>
+</p>
+</div>
+<br>
+
+
+<div class="container">
+  <div class="row">
+    {% for model in models %}
+              <div class="col-sm-4 mb-3">
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{ model.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ model.kind }}</h5>
+                      <p class="card-text">{{ model.card_description }}</p>
+                      <a role="button" href="{% url 'staticmodels:detail' model.id %}" class="btn btn-info">Go !!!</a>
+                    </div>
+                  </div>
+              </div>
+          {% endfor %}
+
+
+
+<br>
+<br>
+<br>
+
+</div>
+</div>
+
+
+
+
+<br>
+<br>
+
+
+{% endblock %}

@@ -42,13 +42,15 @@ INSTALLED_APPS = [
     'uav',
     'fixedwing',
     'training',
+    'commercial',
+    'multirotors',
 
 
     # ongoing
-    'commercial',
+    'staticmodels',
     
     # yet to start
-    'multirotors',
+    # nothing i guess only home page
 ]
 
 MIDDLEWARE = [
