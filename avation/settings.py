@@ -44,11 +44,8 @@ INSTALLED_APPS = [
     'training',
     'commercial',
     'multirotors',
+    'model_building',
 
-
-    # ongoing
-    'staticmodels',
-    
     # yet to start
     # nothing i guess only home page
 ]

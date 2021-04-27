@@ -47,6 +47,9 @@ urlpatterns = [
     # all commercial
     path('commercial/', include('commercial.urls'), name='commercial'),
 
+    # all modellings
+    path('model_building/', include('model_building.urls'), name='model_building'),
+
 ]
 
 

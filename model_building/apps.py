@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class StaticmodelsConfig(AppConfig):
+class ModelBuildingConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'staticmodels'
+    name = 'model_building'

@@ -21,9 +21,9 @@
                </ol>
                <div class="carousel-inner" role="listbox">
                  <div class="carousel-item active">
-                   <img class="d-block" src="{{ model.image.url }}" alt="First slide">
+                   <img class="d-block" src="{{ modelbuild.image.url }}" alt="First slide">
                    <div class="carousel-caption d-none d-md-block">
-                     <h5>{{ model.kind }}</h5>
+                     <h5>{{ modelbuild.kind }}</h5>
                    </div>
                  </div>
                  {% for p in photos %}
@@ -76,7 +76,7 @@
 
 
 <div class="alert alert-warning" role="alert">
-  <h3 class="text-primary">{{ model.kind }}</h3>
+  <h3 class="text-primary">{{ train.kind }}</h3>
 </div
 
 
@@ -87,7 +87,7 @@
 
 <br>
 <br>
-<h4>{{ model.card_description }}</h4>
+<h4>{{ modelbuild.card_description }}</h4>
 <br>
 <br>
 </div>
@@ -96,10 +96,10 @@
 <div class="container">
 <div class="section section-javascript" id="javascriptComponents">
         <div class="container">
-          <h3 class="title">Detail Info </h3>
+          <h3 class="title">What Will You Learn</h3>
           <div class="row" id="modals">
             <div class="col-md-6">
-              <h4>{{ model.brief_info }}</h4>
+              <h4>{{ modelbuild.brief_info }}</h4>
               
             </div>
             <div class="col-md-6">
@@ -107,7 +107,7 @@
 
                   <div class="list-group">
                     <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
-                      Major Points
+                      Skill List
                     </button>
                     {% for po in points %}
                     <button type="button" class="list-group-item list-group-item-action">{{ po.point }}</button>
